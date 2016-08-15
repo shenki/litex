@@ -5,6 +5,7 @@
 #include <crc.h>
 #include <string.h>
 #include <irq.h>
+#include <stdlib.h>
 
 #include <generated/mem.h>
 #include <generated/csr.h>
@@ -285,3 +286,21 @@ void romboot(void)
 	boot(0, 0, 0, ROM_BOOT_ADDRESS);
 }
 #endif
+
+void go(char *str)
+{
+	unsigned long addr;
+
+	if(*str == 0) {
+		printf("go <address>\n");
+		return;
+	}
+
+	addr = strtoul(str, NULL, 0);
+	if(addr != 0) {
+		printf("bad address\n");
+		return;
+	}
+	printf("Executing from %08x\n", addr);
+	boot(0, 0, 0, addr);
+}

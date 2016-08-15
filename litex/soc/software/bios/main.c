@@ -393,6 +393,7 @@ static void do_command(char *c)
 	else if(strcmp(token, "memtest") == 0) memtest();
 	else if(strcmp(token, "sdrinit") == 0) sdrinit();
 #endif
+	else if (strcmp(token, "go") == 0) go(get_token(&c));
 
 	else if(strcmp(token, "") != 0)
 		printf("Command not found\n");
