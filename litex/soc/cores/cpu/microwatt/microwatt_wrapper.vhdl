@@ -26,7 +26,7 @@ entity microwatt_wrapper is
         wishbone_insn_ack   : in std_ulogic;
         wishbone_insn_stall : in std_ulogic;
 
-        wishbone_insn_adr   : out std_ulogic_vector(31 downto 0);
+        wishbone_insn_adr   : out std_ulogic_vector(28 downto 0);
         wishbone_insn_dat_w : out std_ulogic_vector(63 downto 0);
         wishbone_insn_cyc   : out std_ulogic;
         wishbone_insn_stb   : out std_ulogic;
@@ -37,14 +37,14 @@ entity microwatt_wrapper is
         wishbone_data_ack   : in std_ulogic;
         wishbone_data_stall : in std_ulogic;
 
-        wishbone_data_adr   : out std_ulogic_vector(31 downto 0);
+        wishbone_data_adr   : out std_ulogic_vector(28 downto 0);
         wishbone_data_dat_w : out std_ulogic_vector(63 downto 0);
         wishbone_data_cyc   : out std_ulogic;
         wishbone_data_stb   : out std_ulogic;
         wishbone_data_sel   : out std_ulogic_vector(7 downto 0);
         wishbone_data_we    : out std_ulogic;
 
-        wishbone_snoop_adr   : out std_ulogic_vector(31 downto 0);
+        wishbone_snoop_adr   : out std_ulogic_vector(28 downto 0);
         wishbone_snoop_dat_w : out std_ulogic_vector(63 downto 0);
         wishbone_snoop_cyc   : out std_ulogic;
         wishbone_snoop_stb   : out std_ulogic;
