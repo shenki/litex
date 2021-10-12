@@ -160,8 +160,6 @@ class Microwatt(CPU):
             # Decode.
             "insn_helpers.vhdl",
             "decode1.vhdl",
-            "gpr_hazard.vhdl",
-            "cr_hazard.vhdl",
             "control.vhdl",
             "decode2.vhdl",
 
