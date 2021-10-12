@@ -191,6 +191,10 @@ class Microwatt(CPU):
             # Core.
             "core_debug.vhdl",
             "core.vhdl",
+
+            "fpga/fpga-random.vhdl",
+            "pmu.vhdl",
+            "fpu.vhdl",
         ]
         sdir = get_data_mod("cpu", "microwatt").data_location
         cdir = os.path.dirname(__file__)
