@@ -192,7 +192,8 @@ class Microwatt(CPU):
             "core_debug.vhdl",
             "core.vhdl",
 
-            "fpga/fpga-random.vhdl",
+#            "fpga/fpga-random.vhdl",
+            "nonrandom.vhdl",
             "pmu.vhdl",
             "fpu.vhdl",
         ]
