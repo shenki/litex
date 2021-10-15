@@ -16,7 +16,9 @@ use work.wishbone_types.all;
 entity microwatt_wrapper is
     generic (
         SIM             : boolean := false;
-        DISABLE_FLATTEN : boolean := false
+        DISABLE_FLATTEN : boolean := false;
+        HAS_FPU         : boolean := false;
+        LOG_LENGTH      : natural := 0
     );
     port (
         clk          : in std_logic;
@@ -111,7 +113,9 @@ begin
     microwatt_core : entity work.core
         generic map (
             SIM             => SIM,
-            DISABLE_FLATTEN => DISABLE_FLATTEN
+            DISABLE_FLATTEN => DISABLE_FLATTEN,
+            HAS_FPU         => HAS_FPU,
+            LOG_LENGTH      => LOG_LENGTH
         )
         port map (
             clk               => clk,
