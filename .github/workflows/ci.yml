@@ -22,7 +22,7 @@ jobs:
         run: |
           sudo apt-get install wget build-essential python3 ninja-build
           sudo apt-get install libevent-dev libjson-c-dev flex bison
-          sudo apt-get install libfl-dev libfl2 zlib1g-dev
+          sudo apt-get install libfl-dev libfl2 zlib1g-dev verilator
           pip3 install setuptools
           pip3 install requests
           pip3 install pexpect
@@ -43,17 +43,6 @@ jobs:
           sudo mkdir /usr/local/openrisc
           sudo cp -r $PWD/../openrisc-*/* /usr/local/openrisc
           sudo apt install gcc-powerpc64le-linux-gnu binutils-multiarch
-
-      # Build / Install Verilator
-      - name: Build Verilator
-        run: |
-          export PATH="/usr/lib/ccache:/usr/local/opt/ccache/libexec:$PATH"
-          git clone https://github.com/verilator/verilator
-          cd verilator
-          autoconf
-          ./configure
-          make -j$(nproc)
-          sudo make install
 
       # Install Project
       - name: Install Project
