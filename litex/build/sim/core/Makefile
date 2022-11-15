@@ -54,6 +54,7 @@ sim: $(OBJS_SIM) | mkdir
 		-Wno-WIDTH \
 		-Wno-COMBDLY \
 		-Wno-CASEINCOMPLETE \
+		-Wno-TIMESCALEMOD \
 		--relative-includes
 	make -j$(JOBS) -C $(OBJ_DIR) -f Vsim.mk Vsim
 
